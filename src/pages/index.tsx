@@ -4,6 +4,10 @@ import { Box, Divider, Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
 
+import { carrosel } from "../mocks.json"
+import { Carrousel } from "@/components/Carrousel";
+
+
 export default function Home() {
   return (
     <Flex direction="column" h="100vh">
@@ -67,15 +71,19 @@ export default function Home() {
             </Text>
           </Flex>
         </SimpleGrid>
-      </Box>
-      
-      <Flex align="center" justify="center" direction="column" >
-        <Divider borderColor="gray.700" width={"90px"} border="2"/>
-        <Flex my="14" align="center" justify="center" direction="column" >
-          <Text color="gray.700" fontWeight="500" fontSize="xl">Vamos nessa?</Text>
-          <Text color="gray.700" fontWeight="500" fontSize="xl">Então escolha seu continente</Text>
+        <Flex align="center" justify="center" direction="column" mt="20">
+          <Divider borderColor="gray.700" width={"90px"} border="2"/>
+          <Flex my="14" align="center" justify="center" direction="column" >
+            <Text color="gray.700" fontWeight="500" fontSize="xl">Vamos nessa?</Text>
+            <Text color="gray.700" fontWeight="500" fontSize="xl">Então escolha seu continente</Text>
+          </Flex>
         </Flex>
-      </Flex>
+        <Carrousel slides={carrosel}/>
+      </Box>
+
+
+      {/* <Box w="100%" my={["16","24"]} maxWidth={1160} mx="auto" height="40px">
+      </Box> */}
     </Flex>
   )
 }
